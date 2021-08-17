@@ -1,7 +1,4 @@
-const shelf = document.getElementById('shelf');
-
-
-
+const shelf = document.getElementById("shelf");
 
 let myLibrary = [
   {
@@ -16,23 +13,22 @@ function Book(name, author) {
   this.author = author;
 }
 
-function addBookToLibrary(books) {
-  books.forEach(book){
-    const row = document.createElement('div');
-    row.add.classList.add("row")  
+function addBookToLibrary(book) {
+  const row = document.createElement("div");
+  row.classList.add("row");
 
-    const bookName = document.createElement('div');
-    bookName.classList.add('one-half column');
+  const bookName = document.createElement("div");
+  bookName.classList.add("one-half", "column");
 
-    const author = document.createElement('div');
-    author.classList.add('one-half column');
+  const author = document.createElement("div");
+  author.classList.add("one-half", "column");
 
-    bookName.innerHTML = `<h2>${book.name}</h2>`;
-    author.innerHTML = `<h2>${book.author}</h2>`;
+  bookName.innerHTML = `<h2>${book.name}</h2>`;
+  author.innerHTML = `<h2>${book.author}</h2>`;
 
-    row.appendChild(bookName);
-    row.appendChild(author);
-    shelf.appendChild(row);
-
-  }
+  row.appendChild(bookName);
+  row.appendChild(author);
+  shelf.appendChild(row);
 }
+
+myLibrary.forEach(addBookToLibrary);
